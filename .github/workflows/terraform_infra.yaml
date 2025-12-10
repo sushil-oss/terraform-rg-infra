@@ -1,10 +1,8 @@
 name: Terraform Infra Resource 
 on: 
   push:
-    branches:
-      - main
-      exclude:
-      - 'refs/tags/*'
+    # branches:
+    #   - main
   workflow_dispatch:
   jobs:
     terraform:

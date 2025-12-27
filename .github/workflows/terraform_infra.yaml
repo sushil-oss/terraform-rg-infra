@@ -3,8 +3,7 @@ name: Terraform Infra Resource
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main   # main branch me change hone par pipeline chalegi
 
 jobs:
   terraform:
@@ -17,8 +16,10 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.7.6
 
-      - name: azure login
+      - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
